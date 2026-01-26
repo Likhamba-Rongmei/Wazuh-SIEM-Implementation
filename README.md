@@ -8,7 +8,7 @@ This project simulates a real-world Security Operations Center (SOC) environment
 I acted as both the **Red Team** (executing Brute Force and Malware attacks) and the **Blue Team** (investigating alerts) to verify end-to-end detection capabilities.
 
 ## Network Architecture
-
+<img src="./Architecture/network_diagram.png" alt="Network Diagram" width="700">
 * SIEM Server: Ubuntu Server (virtualized on Windows Laptop A) running Wazuh Manager, Indexer, and Dashboard.
 * Endpoint: Windows 11 Laptop B with Wazuh Agent installed.
 * Analyst Station: macOS system accessing the Wazuh Dashboard via web interface.
@@ -34,12 +34,14 @@ Code Snippet (ossec.conf):
 
 # Attack Simulation & Detection Results
 1. Identity Attack (Brute Force)
+<img src="./ScreenShots/bruteforce_detection.jpeg" alt="Brute Force detection" width="700">
 Technique: T1110 (Brute Force).
 Simulation: Generated continuous authentication failures on the victim machine.
 Detection: Wazuh correlated the events and fired Rule 60204 (Multiple Logon Failures).
 
 
 2. Malware Payload Delivery
+<img src="./ScreenShots/Malware_detection.png" alt="malware detection logs" width="700">
 Technique: User Execution (Malicious File).
 Simulation: Dropped the EICAR Standard Anti-Virus Test File onto the endpoint.
 Detection: Windows Defender quarantined the file, and the custom log pipeline successfully forwarded the event to Wazuh, triggering Rule 62123.
@@ -64,7 +66,7 @@ Detection: Windows Defender quarantined the file, and the custom log pipeline su
 **4. Dynamic IP Disconnects**
 * **Problem:** The Ubuntu server's IP address changed after a reboot, causing the Windows Agent to lose connectivity.
 * **Solution:** I troubleshot the connectivity issue using `netstat` and reconfigured the agent to point to the new IP. (Future improvement: Implement Static IP assignment).
-
+<img src="Static_Ip_configuration.jpeg" alt="static Ip configuration" width="500">
 ----
 
 ##  Skills Demonstrated
