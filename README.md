@@ -19,7 +19,7 @@ I acted as both the **Red Team** (executing Brute Force and Malware attacks) and
 * Design a realistic SOC architecture with a centralized SIEM (Wazuh) and distributed Windows endpoints.
 * SIEM deployment and configuration
 * Validate identity security detections by simulating and detecting brute-force authentication attacks.
-* Validate endpoint security detections by triggering and analyzing malware/antivirus-related events.dfd
+* Validate endpoint security detections by triggering and analyzing malware/antivirus-related events.
 ---
 
 ## Pipeline Engineering (The "Hidden" Logs)
