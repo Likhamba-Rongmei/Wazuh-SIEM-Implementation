@@ -64,7 +64,7 @@ Detection: Windows Defender quarantined the file, and the custom log pipeline su
 
 **4. Dynamic IP Disconnects**
 * **Problem:** The Ubuntu server's IP address changed after a reboot, causing the Windows Agent to lose connectivity.
-* **Solution:** I troubleshot the connectivity issue using `netstat` and reconfigured the agent to point to the new IP. (Future improvement: Implement Static IP assignment).
+* **Solution:** I troubleshot the connectivity issue using `netstat` to implemented Static IP assignment.
 ----
 
 ##  Skills Demonstrated
